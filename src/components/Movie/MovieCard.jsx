@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 
 import StarRating from '../StarRating.jsx';
 
-const MovieCard = ({ movie }) => (
+const MovieCard = ({ movie, removeMovie }) => (
   <div className="movie-card">
+    {!movie.default &&
+      <button onClick={()=>removeMovie(movie.id)}>x</button>
+    }
     <div className="movie-card card">
       <img className="card-img-top" src={movie.imageUrl} alt="" />
       <div className="card-body">
@@ -27,11 +30,13 @@ const MovieCard = ({ movie }) => (
 );
 
 MovieCard.defaultProps = {
-  movie: {},
+  movie: [],
+  removeMovie: () => {}
 };
 
 MovieCard.propTypes = {
   movie: PropTypes.object,
+  removeMovie: PropTypes.func,
 };
 
 export default MovieCard;
