@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import MovieList from './MovieList';
+import MovieList from './MovieList.jsx';
 import MovieService from '../../services/MovieService';
 
 const Movies = () => {

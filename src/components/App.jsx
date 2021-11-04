@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from './Header';
-import Movies from './Movie/Movies';
+import Header from './Header.jsx';
+import Movies from './Movie/Movies.jsx';
 
 const title = 'React Movie Cards';
 

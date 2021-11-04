@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import StarRating from '../StarRating';
+import StarRating from '../StarRating.jsx';
 
 const MovieCard = ({ movie }) => (
   <div className="movie-card">
