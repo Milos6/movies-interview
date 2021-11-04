@@ -30,6 +30,7 @@ const MovieInputForm = ({ setMovies }) => {
         description: description,
         imageUrl: imageUrl,
         rating: 0,
+        peopleRated: 0,
       }]);
       setSubmitted(false);
     }

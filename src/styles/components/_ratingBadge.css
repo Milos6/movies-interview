@@ -1,0 +1,15 @@
+.parent {
+    position: relative;
+}
+
+.child {
+    position: absolute;
+    display: none;
+}
+
+.child.hover {
+    display: block;
+    top: 1.5rem;
+    left: 0;
+    cursor: pointer;
+}

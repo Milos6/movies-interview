@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StarRating from '../StarRating.jsx';
+import RatingBadge from './RatingBadge.jsx';
 
-const MovieCard = ({ movie, removeMovie }) => (
+const MovieCard = ({ movie, removeMovie, setRating }) => (
   <div className="movie-card">
     {!movie.default &&
       <button onClick={()=>removeMovie(movie.id)}>x</button>
@@ -20,9 +21,9 @@ const MovieCard = ({ movie, removeMovie }) => (
       <div className="card-footer">
         <div className="clearfix">
           <div className="float-left mt-1">
-            <StarRating rating={movie.rating} />
+            <StarRating rating={movie.rating} setRating={setRating} id={movie.id}/>
           </div>
-          <div className="card-footer-badge float-right badge badge-primary badge-pill">{movie.rating}</div>
+          <RatingBadge peopleRated={movie.peopleRated} rating={movie.rating}/>
         </div>
       </div>
     </div>
@@ -31,12 +32,14 @@ const MovieCard = ({ movie, removeMovie }) => (
 
 MovieCard.defaultProps = {
   movie: [],
-  removeMovie: () => {}
+  removeMovie: () => {},
+  setRating: () => {}
 };
 
 MovieCard.propTypes = {
   movie: PropTypes.object,
   removeMovie: PropTypes.func,
+  setRating: PropTypes.func,
 };
 
 export default MovieCard;
